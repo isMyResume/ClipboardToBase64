@@ -10,5 +10,7 @@ def pngimagefile_to_base64(filepath):
 
 def convert_markdown_image_tag(filepath, base64_encoded):
     filepath = filepath.replace('image/', '')
-    image_tag = '![' + filepath + '](' + 'data:image/png;base64,' + base64_encoded + ')'
+    image_tag = '![' + filepath + '](' + 'data:image/png;base64,' + base64_encoded + ')'''
+
+
     return image_tag

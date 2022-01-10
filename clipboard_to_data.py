@@ -12,7 +12,7 @@ def get_image_clipboard():
 
 
 def clipboard_image_to_png(clipboard_data):
-    filepath = generate_filepath('png', os.getcwd() + '/image/')
+    filepath = generate_filepath('png', 'image/')
     clipboard_data.save(filepath)
     return filepath
 
