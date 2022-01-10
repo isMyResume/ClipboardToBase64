@@ -5,6 +5,7 @@ from pathlib import Path
 
 import PIL
 import win32clipboard
+import win32con
 from PIL import ImageFile, Image
 
 
@@ -44,3 +45,5 @@ def generate_filepath(ext, path=''):
 def get_image_file(path):
     with PIL.Image.open(path) as image:
         return image
+
+
