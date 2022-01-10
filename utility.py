@@ -1,12 +1,11 @@
+import datetime
+import uuid
 from io import BytesIO
+from pathlib import Path
 
+import PIL
 import win32clipboard
-from PIL import ImageGrab, ImageFile, Image
-
-
-def get_clipboard():
-    clipboard_image = ImageGrab.grabclipboard()
-    return clipboard_image
+from PIL import ImageFile, Image
 
 
 def set_clipboard_image(filepath):
@@ -26,3 +25,22 @@ def set_empty_clipboard():
     win32clipboard.OpenClipboard()
     win32clipboard.EmptyClipboard()
     win32clipboard.CloseClipboard()
+
+
+def createDirectory(path):
+    path = Path.cwd() / path
+    path.mkdir(parents=True, exist_ok=True)
+    directoryPath = str(path) + "\\"
+    return directoryPath
+
+
+def generate_filepath(ext, path=''):
+    createDirectory(path)
+    now = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+    filepath = path + now + '_' + str(uuid.uuid4()) + '.' + ext
+    return filepath
+
+
+def get_image_file(path):
+    with PIL.Image.open(path) as image:
+        return image
