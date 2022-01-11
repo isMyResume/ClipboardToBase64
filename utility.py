@@ -47,3 +47,9 @@ def get_image_file(path):
         return image
 
 
+def set_clipboard_text(text):
+    win32clipboard.OpenClipboard()
+    win32clipboard.EmptyClipboard()
+    win32clipboard.SetClipboardData(win32con.CF_UNICODETEXT, text)
+    win32clipboard.CloseClipboard()
+    return text

@@ -1,14 +1,19 @@
+# This is a sample Python script.
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import sys
 
 from PyQt5 import QtCore
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QPushButton, QCheckBox, QGridLayout, QSizePolicy, QApplication
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QCheckBox, QGridLayout, QSizePolicy
 
 from clipboard_to_base64_tag import get_clipboard_to_base64
 
 
 def clipboard_to_base64():
     get_clipboard_to_base64()
+
 
 class App(QWidget):
     def __init__(self):
@@ -33,7 +38,6 @@ class App(QWidget):
             self.show()
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = App()
