@@ -2,7 +2,7 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-from clipboard_to_base64_tag import clipboard_image_to_base64_tag
+from clipboard_to_base64_tag import clipboard_image_to_base64_tag, get_clipboard_to_base64
 
 
 def print_hi(name):
@@ -12,4 +12,4 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    clipboard_image_to_base64_tag()
+    get_clipboard_to_base64()
